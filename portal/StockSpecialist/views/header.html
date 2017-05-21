@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Stock Specialist</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a data-ui-sref="home">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Register Me<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="event in events"><a data-ui-sref="home.register({eventId:event._id})">{{event.name}}</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ng-click="login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>

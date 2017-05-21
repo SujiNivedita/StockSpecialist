@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="page-header">
+     <h1>Stock Specialist</h1>
+  </div>
+<div class="row">
+  <div class="col-lg-6">
+   <uib-accordion close-others="oneAtATime">
+     <div uib-accordion-group class="panel-default" ng-repeat="stock in stockDetails" >
+      <uib-accordion-heading>
+        {{stock.Name}} <i class="pull-right glyphicon glyphicon-chevron-right"></i>
+      </uib-accordion-heading>
+      {{stock.Symbol}}<br/>
+      {{stock.MarketCap}}<br/>
+      {{stock.Sector}}<br/>
+      {{stock.Industry}}<br/>
+      </div>
+   </uib-accordion>
+  </div>
+ </div>
+</div>
+  </div>
+</div>
+</div>

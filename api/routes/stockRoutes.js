@@ -4,7 +4,7 @@ module.exports = function(app) {
 
 
   // Event Routes
-  app.route('/events')
+  app.route('/stock')
     .get(event.list_all_events)
     .post(event.create_event);
 

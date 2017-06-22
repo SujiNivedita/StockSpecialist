@@ -8,17 +8,20 @@ define([
         './services/services',
         'StockSpecialist/controllers/header-ctrl',
         'StockSpecialist/controllers/home-ctrl',
-         'StockSpecialist/controllers/register-ctrl'      
+         'StockSpecialist/controllers/register-ctrl',    
+         'StockSpecialist/controllers/details-ctrl'      
            
     ],
     function(angular){
         return angular.module('StockSpecialist',[
                 'ui.router',            
                 'ui.bootstrap',
+              
                 'StockSpecialist.repos',            
                 'StockSpecialistApp.controllers.headerCtrl',
                 'StockSpecialistApp.controllers.homeCtrl',
-                'StockSpecialistApp.controllers.registerCtrl'
+                'StockSpecialistApp.controllers.registerCtrl',
+                'StockSpecialistApp.controllers.detailsCtrl'
             ])
             .config(function ($stateProvider, $urlRouterProvider){
                 $urlRouterProvider.otherwise('home');
@@ -54,6 +57,22 @@ define([
                             'site-content@': {
                                 templateUrl:'StockSpecialist/views/register.html',
                                 controller:'registerCtrl'
+                            }
+                        },
+                        resolve:{
+                            auth:function($q,$window){
+
+                            }
+                        }
+                    });
+                     $stateProvider
+                    .state('home.details', {
+                        url:'/details/:symbol',
+                        abstract:false,
+                        views:{
+                            'site-content@': {
+                                templateUrl:'StockSpecialist/views/details.html',
+                                controller:'detailsCtrl'
                             }
                         },
                         resolve:{
